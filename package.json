@@ -6,6 +6,9 @@
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "myapp": "yarn workspace my-react-app"
+  },
   "devDependencies": {
     "@types/eslint": "^8",
     "eslint": "^8.21.0",

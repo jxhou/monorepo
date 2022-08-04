@@ -25,4 +25,3 @@ function App() {
 
 export default App;
 const y =1;
-y=2;

@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "apps/api",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - apps/api",
+			"detail": "tsc"
+		}
+	]
+}

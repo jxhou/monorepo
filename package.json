@@ -7,11 +7,15 @@
     "packages/*"
   ],
   "scripts": {
-    "myapp": "yarn workspace my-react-app"
+    "myapp": "yarn workspace my-react-app",
+    "myapi": "yarn workspace api",
+    "lint:staged": "yarn workspaces foreach run lint:staged",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/eslint": "^8",
     "eslint": "^8.21.0",
+    "husky": "^8.0.0",
     "typescript": "^4.7.4"
   }
 }

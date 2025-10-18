@@ -1,22 +1,37 @@
-# monorepo
-monorepo exercise
-## Setup monorepo using yarn berry + pnp + typescript
+This is a yarn 2+ workspace based monorepo using typescript for all projects.
 
-### Setup initial yarn workspaces with pnp enabled
-	* create monorepo host folder
-			mkdir monorepo  & cd monorepo
-	* install local yarn berry 	
-			yarn set version berry
-	* initialize yarn workspace
-			yarn init -w
+For yarn workspace setup details see:
+	docs/yarn-monorepo-setup.md
+## apps and packages
+	package.json
+		"workspaces": [
+			"apps/*",
+			"packages/*"
+		],
+	
+	Two workspace folders are defined: apps, and packages.
+	app folder will host standalone app such as react app or nodejs app, and,
+	packages folder will host shared libraries.
+## yarn commands
+Run a command within the specified workspace.
+	$> yarn workspace <workspaceName> <commandName> ...
+### Add a package to a single workspace :
+	yarn workspace components add -D react
+### Run build script on a api workspace :
+	yarn workspace api run build
+		or
+	yarn workspace api build
 
-### Yarn plugins
-    * yarn plugin import typescript
-    * yarn plugin import workspace-tools
+### Common commands for this monorepo
+	yarn myapi build - run api's build script
+	yarn myapi dev   - run api's dev script
+	yarn myapp build - run my-react-app's build script
+		where myapi and myapp are scripts defined in root package.json
 
-### vscode editor support
-    * install ZipFS vscode extension
-    * yarn add --dev typescript 
-	* yarn add --dev eslint
-	* yarn dlx @yarnpkg/sdks vscode
-	* yarn install
+### vscode debug
+	following debug settings for api server:
+		"Launch api server + watch": launch api server in ts, and debug, and watch at same time;
+		"Launch api server": launch api server in js, after compile ts, and debug;
+		"Nodemon: Attach Express.js + TypeScript": attach to the running api server in debug mode.
+
+## Features
